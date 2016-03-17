@@ -1,0 +1,14 @@
+{
+  "name": "js-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter nyan"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "mocha": "^2.4.5"
+  }
+}
