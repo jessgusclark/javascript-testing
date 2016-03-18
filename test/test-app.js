@@ -20,16 +20,16 @@ describe('Second File', function() {
   describe("returnMath()", function(){
     
     it('should return addition of two numbers', function(){
-        var answer = app.returnMath(8,7);
+        var answer = app.first.returnMath(8,7);
         assert.equal(15, answer);  
     });
     
     it('should return a number', function(){
-        assert.typeOf(app.returnMath(5,5), 'number'); 
+        assert.typeOf(app.first.returnMath(5,5), 'number'); 
     });
     
     it('should not return a string', function(){
-        assert.notEqual("hello", app.returnMath(1,1));
+        assert.notEqual("hello", app.first.returnMath(1,1));
     });
     
   });
@@ -37,19 +37,19 @@ describe('Second File', function() {
   describe("sayHello()", function(){
     
     it('should return english', function(){        
-        assert.equal("Hello", app.sayHello("en"));         
+        assert.equal("Hello", app.first.sayHello("en"));         
     });
     
     it('should return spanish', function(){        
-        assert.equal("Hola", app.sayHello("es"));         
+        assert.equal("Hola", app.first.sayHello("es"));         
     });
     
     it('should return french', function(){        
-        assert.equal("Bonjour", app.sayHello("fr"));         
+        assert.equal("Bonjour", app.first.sayHello("fr"));         
     });
     
     it ('should return blank', function(){
-        assert.equal("", app.sayHello("gr"));
+        assert.equal("", app.first.sayHello("gr"));
     })
     
   });
@@ -57,7 +57,7 @@ describe('Second File', function() {
   describe("Misc app", function(){
       
      it('should have access to function', function(){
-         assert.equal("Hello!", app.nested());
+         assert.equal("Hello!", app.first.nested());
      });
      
      it('should have access to a "root" function', function(){

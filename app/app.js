@@ -2,7 +2,7 @@
     return a + b;
 }*/
 
-module.exports = {
+module.exports.first = {
     returnMath: function( a, b ){
         return a + b;
     },
