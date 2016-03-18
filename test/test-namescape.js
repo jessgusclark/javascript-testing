@@ -1,21 +1,21 @@
 var assert = require('chai').assert,
     expect = require('chai').expect,
     
-    namescape = require('../build/app.js');
+    app = require('../build/app.js');
     
 
 describe("constructor()", function(){
     
     /*it('should execute the constructor', function(){
-        assert.equal("Hi", namescape.namescape());
+        assert.equal("Hi", app.namescape());
     });*/
     
     it('should execute the constructor', function(){
-        assert.equal("Hi", namescape.jesse.init());
+        assert.equal("Hi", app.jesse.init());
     });
     
     it('has access to the outside?', function(){
-        assert.equal("Hello From the Outside!", namescape.jesse.outside());
+        assert.equal("Hello From the Outside!", app.jesse.outside());
     });
     
 });  
@@ -23,19 +23,19 @@ describe("constructor()", function(){
 describe("Module Export", function(){
    
    it('should have access to outsideYo', function(){
-       assert.equal(1, namescape.out.init() );
+       assert.equal(1, app.out.init() );
    });
       
    it('should not have access to privateFunction()', function(){
-       expect (function() { namescape.out.privateFunction() }).to.throw ( TypeError );
+       expect (function() { app.out.privateFunction() }).to.throw ( TypeError );
    });
    
    it('should get access to privateFunction through getPrivate', function(){
-       assert.equal(2, namescape.out.getPrivate());
+       assert.equal(2, app.out.getPrivate());
    });
    
    it('should get access to privateFunction2 through getPrivateTwo', function(){
-       assert.equal(4, namescape.out.getPrivateTwo());
+       assert.equal(4, app.out.getPrivateTwo());
    });
    
 });
