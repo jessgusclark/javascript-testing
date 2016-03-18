@@ -1,14 +1,14 @@
 var assert = require('chai').assert,
     expect = require('chai').expect,
     
-    scope = require('../app/scope.js');
+    app = require('../build/app.js');
 
 
 describe("scope()", function(){
     
     it('should be okay', function(){
-        assert.isOk(true, scope);
-        console.log(scope);
+        assert.isOk(true, app.scopeDemo);
+        console.log(app.scopeDemo);
     });
     
     it('should throw an error', function(){
@@ -16,15 +16,15 @@ describe("scope()", function(){
     })
         
     it('should not return privateFunction', function(){
-        expect (function() { scope.privateMethod() }).to.throw ( TypeError );
+        expect (function() { app.scopeDemo.privateMethod() }).to.throw ( TypeError );
     });
     
     it('should return publicMethod', function(){
-        assert.equal("public method", scope.publicMethod());
+        assert.equal("public method", app.scopeDemo.publicMethod());
     });
     
     it('should return the privateMethod via a public function', function(){
-        assert.equal("private method", scope.publicPrivateMethod());
+        assert.equal("private method", app.scopeDemo.publicPrivateMethod());
     })
     
 })

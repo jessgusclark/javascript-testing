@@ -1,11 +1,11 @@
 var assert = require('chai').assert,
-    constructor = require('../app/constructor.js')
+    app = require('../build/app.js')
     ;
 
 describe("constructor()", function(){
     
     it('should execute the constructor', function(){
-        assert.equal("init! - jesse", constructor("jesse"));
+        assert.equal("init! - jesse", app.constructorDemo("jesse"));
     });
     
 });  

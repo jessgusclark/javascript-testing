@@ -1,4 +1,4 @@
-module.exports = (function (name) {
+module.exports.constructorDemo = (function (name) {
     
     var _constructor = function(name){
         return "init! - " + name;
