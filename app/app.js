@@ -22,12 +22,12 @@ module.exports = {
                 
     },
     
-    nested: function(my){
+    nested: function(){
         
-        my.hello = function(){
+        hello = function(){
            return "Hello!"; 
         };
         
-        return my;
+        return hello(); 
     }
 }
