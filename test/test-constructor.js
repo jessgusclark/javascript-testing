@@ -5,7 +5,7 @@ var assert = require('chai').assert,
 describe("constructor()", function(){
     
     it('should execute the constructor', function(){
-        assert.equal("init! - jesse", constructor("jesse"));
+        assert.equal("init! - jesse", constructor.constructorDemo("jesse"));
     });
     
 });  
