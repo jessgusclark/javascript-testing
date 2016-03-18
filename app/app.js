@@ -31,3 +31,8 @@ module.exports = {
         return hello(); 
     }
 }
+
+
+module.exports.outsideMethod = function() {
+    return "Outside Yo!";
+};

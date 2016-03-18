@@ -59,7 +59,13 @@ describe('Second File', function() {
      it('should have access to function', function(){
          assert.equal("Hello!", app.nested());
      });
-      
+     
+     it('should have access to a "root" function', function(){
+         
+         assert.equal("Outside Yo!", app.outsideMethod());
+         
+     })
+     
   });
     
 });

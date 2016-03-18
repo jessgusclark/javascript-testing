@@ -1,5 +1,6 @@
 module.exports = (function () {
   
+  // private function:
   var privateMethod = function () {
     return "private method";
   };
@@ -13,7 +14,7 @@ module.exports = (function () {
     // get and return privateMethod()
     publicPrivateMethod: function(){
         return privateMethod();
-    }
+    } 
 
   };
   
