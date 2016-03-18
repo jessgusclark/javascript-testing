@@ -19,7 +19,15 @@ module.exports = {
             default:
                 return "";
         }
-        
-    }
+                
+    },
     
+    nested: function(my){
+        
+        my.hello = function(){
+           return "Hello!"; 
+        };
+        
+        return my;
+    }
 }
