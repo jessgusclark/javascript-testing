@@ -32,12 +32,30 @@ var outsideYo = (function () {
         return 2;
     }
     
+    // written in a different format:
+    var privateFunction2 = function(){
+        return 4;
+    }
+    
+    /*var __construct = function() {
+        console.log("constructor");
+        return 3;
+    }();*/
+   
 	//public functions:
     return {
         init : function(){
             return 1;
-        }
+        },
+        getPrivate : function(){
+            return privateFunction();
+        },
+        getPrivateTwo :function(){
+            return privateFunction2();
+        }        
     }
+     
+    
 }());
 
 // attach namescape to the outputs:

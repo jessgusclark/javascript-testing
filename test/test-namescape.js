@@ -25,9 +25,17 @@ describe("Module Export", function(){
    it('should have access to outsideYo', function(){
        assert.equal(1, namescape.out.init() );
    });
-   
+      
    it('should not have access to privateFunction()', function(){
        expect (function() { namescape.out.privateFunction() }).to.throw ( TypeError );
+   });
+   
+   it('should get access to privateFunction through getPrivate', function(){
+       assert.equal(2, namescape.out.getPrivate());
+   });
+   
+   it('should get access to privateFunction2 through getPrivateTwo', function(){
+       assert.equal(4, namescape.out.getPrivateTwo());
    });
    
 });
