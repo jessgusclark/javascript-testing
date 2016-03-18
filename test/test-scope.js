@@ -1,7 +1,7 @@
 var assert = require('chai').assert,
     expect = require('chai').expect,
     
-    scope = require('../app/scope.js');
+    scope = require('../build/app.js');
 
 
 describe("scope()", function(){

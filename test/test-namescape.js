@@ -1,7 +1,7 @@
 var assert = require('chai').assert,
     expect = require('chai').expect,
     
-    namescape = require('../app/namescape.js');
+    namescape = require('../build/app.js');
     
 
 describe("constructor()", function(){

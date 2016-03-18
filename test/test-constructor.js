@@ -1,5 +1,5 @@
 var assert = require('chai').assert,
-    constructor = require('../app/constructor.js')
+    constructor = require('../build/app.js')
     ;
 
 describe("constructor()", function(){

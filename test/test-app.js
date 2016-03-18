@@ -1,5 +1,5 @@
 var assert = require('chai').assert,
-    app = require('../app/app.js')
+    app = require('../build/app.js')
     ;
 
 describe('Second File', function() {
