@@ -25,4 +25,20 @@ describe('Array', function() {
     
   });
   
+  describe("sayHello()", function(){
+    
+    it('should return english', function(){        
+        assert.equal("Hello", app.sayHello("en"));         
+    });
+    
+    it('should return spanish', function(){        
+        assert.equal("Hola", app.sayHello("es"));         
+    });
+    
+    it('should return french', function(){        
+        assert.equal("Bonjour", app.sayHello("fr"));         
+    });
+    
+  });
+  
 });

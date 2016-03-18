@@ -5,5 +5,21 @@
 module.exports = {
     returnMath: function( a, b ){
         return a + b;
+    },
+    
+    sayHello: function(language){
+        
+        switch(language){
+            case "en":
+                return "Hello";
+            case "es":
+                return "Hola";
+            case "fr":
+                return "Bonjour";
+            default:
+                return "";
+        }
+        
     }
+    
 }
