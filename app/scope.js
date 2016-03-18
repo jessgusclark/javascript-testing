@@ -1,4 +1,4 @@
-module.exports = (function () {
+module.exports.scopeDemo = (function () {
   
   // private function:
   var privateMethod = function () {
