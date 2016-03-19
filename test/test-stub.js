@@ -1,12 +1,11 @@
 var assert = require('chai').assert,
 	sinon = require('sinon'),
-    
     app = require('../build/app.js');
 
 
 describe('Stubs', function(){
 	describe('Basic', function(){
-		
+
    		it('should be called', function(){
    			assert.equal(app.stubDemo.getDefaultValue(), 4);
    		});
@@ -20,4 +19,17 @@ describe('Stubs', function(){
 
    		});
    	});
+
+	describe('JSON Data', function(){
+		
+		it('can call the json object', function(){
+
+			var data = app.stubDemo.getJson();
+
+			console.log(data);
+
+		});
+
+	});
+
 });
