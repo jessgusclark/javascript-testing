@@ -14,8 +14,11 @@ var spy = (function () {
         thrice : function(){
             return 3;
         },
+
         callAll : function(){
-            return thrice();
+            this.once();
+            this.twice();
+            this.thrice();
         }
     }
      
