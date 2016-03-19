@@ -8,7 +8,6 @@ describe("scope()", function(){
     
     it('should be okay', function(){
         assert.isOk(true, app.scopeDemo);
-        console.log(app.scopeDemo);
     });
     
     it('should throw an error', function(){
