@@ -21,16 +21,34 @@ describe('Stubs', function(){
    		});
    	});
 
-	/*describe('JSON Data', function(){
+	describe('JSON Data()', function(){
 		
-		it('can call the json object', function(){
+		/*it('can call the json object', function(done){
 
 			var data = app.stubDemo.jsonCall();
-			console.log(data);
+            
+            assert.equal(data[0].x, 1);
+            done();
+            
+		});*/
+        
+        it('retunrs the data', function(){
 
-		});
+            var data = '[{ "x": 1,  "y": 1,  "radius": 5 },{ "x": 12, "y": 5,  "radius": 8 },{ "x": 20, "y": 15, "radius": 2 }]';
+            //var data = "{ x=1,  y=1,  radius=5 }";
+            //var data = '[{ "x":1,  "y":1,  "radius":5 }]';
+            //var data = '[{ "x": "1",  "y": "1",  "radius": "5" }]'; 
+            
+            var jsonData = JSON.stringify(eval(data));
+            //var formatted = 1;
+            var formatted = app.stubDemo.formatData(jsonData);
+                        
+            assert.typeOf(formatted, 'number', 'we have a number');
+            //assert.equal(formatted, 1);
+            
+        });
 
-	});*/
+	});/**/
 
 });
 /*

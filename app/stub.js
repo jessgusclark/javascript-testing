@@ -19,17 +19,26 @@ var stubDemo = (function (){
 				}
 			});
 
-		}*/
+		}*/ 
         
         jsonCall : function(){
-            url = "http://unco.oudemo.com/_training/docs/superheroes.xml";
+            url = "../data/data.js";
             var jqxhr = $.getJSON( url, function(data) {
-                return (data)
+                return (data);
             })
             .fail(function() {
                 return ("Error!");
             });
             
+        },
+        
+        
+        formatData : function(data){
+
+            console.log(data); 
+            //return data[1].x;
+            //return data[0].x; 
+            return data[0].x;
         }
         
 
