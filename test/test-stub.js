@@ -1,6 +1,7 @@
 var assert = require('chai').assert,
 	sinon = require('sinon'),
-    app = require('../build/app.js');
+    app = require('../build/app.js'),
+    $ = require('jquery');
 
 
 describe('Stubs', function(){
@@ -20,16 +21,29 @@ describe('Stubs', function(){
    		});
    	});
 
-	describe('JSON Data', function(){
+	/*describe('JSON Data', function(){
 		
 		it('can call the json object', function(){
 
-			var data = app.stubDemo.getJson();
-
+			var data = app.stubDemo.jsonCall();
 			console.log(data);
 
 		});
 
-	});
+	});*/
 
 });
+/*
+describe("Source Data", function() {
+    describe("Data for External Modules", function() {
+        it("returns the source data from a file", function(done){
+            
+            var stub = sinon.stub($, "ajax");
+            
+             app.stubDemo.jsonCall(function(sourceData){
+                expect(sourceData.spec[0].name).to.equal("Spec");
+                done();
+            });
+        });
+    });
+});*/
