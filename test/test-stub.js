@@ -23,45 +23,64 @@ describe('Stubs', function(){
 
 	describe('JSON Data()', function(){
 		
-		/*it('can call the json object', function(done){
+        it('local JSON testing', function(){
 
-			var data = app.stubDemo.jsonCall();
+            var data = '[{ "x": 2,  "y": 2,  "radius": 5 },{ "x": 3, "y": 5,  "radius": 8 },{ "x": 20, "y": 15, "radius": 2 }]';
             
-            assert.equal(data[0].x, 1);
-            done();
+            //convert string to json:
+            var jsonData = JSON.parse(data);
+            var jsonJqueryData = $.parseJSON(data);
             
-		});*/
+            // string !== JSON:      
+            assert.notEqual(data, jsonData);
+            
+            // Both JSON Objects but not the same:
+            assert.notEqual(jsonData, jsonJqueryData);
+            
+            // Assets:
+            assert.equal(jsonData[1].x, 3);
+            assert.equal(jsonJqueryData[1].x, 3);
+            assert.typeOf(jsonData[1].x, 'number', 'we have a number');      
+            
+        });
         
-        it('retunrs the data', function(){
-
-            var data = '[{ "x": 1,  "y": 1,  "radius": 5 },{ "x": 12, "y": 5,  "radius": 8 },{ "x": 20, "y": 15, "radius": 2 }]';
-            //var data = "{ x=1,  y=1,  radius=5 }";
-            //var data = '[{ "x":1,  "y":1,  "radius":5 }]';
-            //var data = '[{ "x": "1",  "y": "1",  "radius": "5" }]'; 
+        it('calls local "stubbed" json object instead of returned', function(){
+           
+           // Not Stub:
+           var nonStub = app.stubDemo.returnJsonObject();
+           assert.equal(nonStub[1].x, 2);
+           
+           // Data:
+           var data = '[{ "x": 1,  "y": 1,  "radius": 1 },{ "x": 1, "y": 1,  "radius": 1 },{ "x": 1, "y": 1, "radius": 1 }]';
+           var jsonData = JSON.parse(data);
+           
+           // Stub:
+           app.stubDemo.returnJsonObject = sinon.stub().returns(jsonData);
+           var stubVersion = app.stubDemo.returnJsonObject();
+           
+           // Check Assertions:
+           assert.notEqual(stubVersion[1].x, 2);
+           assert.equal(stubVersion[1].x, 1);
             
-            var jsonData = JSON.stringify(eval(data));
-            //var formatted = 1;
-            var formatted = app.stubDemo.formatData(jsonData);
-                        
-            assert.typeOf(formatted, 'number', 'we have a number');
-            //assert.equal(formatted, 1);
+        })
+        
+        it('calls stub data instead of AJAX Request', function(){
+           
+           // data:
+           var jsonData = JSON.parse('[{ "x": 1,  "y": 1,  "radius": 1 },{ "x": 1, "y": 1,  "radius": 1 },{ "x": 1, "y": 1, "radius": 1 }]');
+           
+           // Stub the function to return jsonData:
+           app.stubDemo.jsonCall = sinon.stub().returns(jsonData);
+           
+           // Call Method and save:
+           var results = app.stubDemo.jsonCall();
+          
+           // Assert:
+           assert.equal(results[1].x, 1);
+           assert.notEqual(results[1].x, 12)    // data/data.js --> [1].x
             
         });
 
-	});/**/
+	});
 
 });
-/*
-describe("Source Data", function() {
-    describe("Data for External Modules", function() {
-        it("returns the source data from a file", function(done){
-            
-            var stub = sinon.stub($, "ajax");
-            
-             app.stubDemo.jsonCall(function(sourceData){
-                expect(sourceData.spec[0].name).to.equal("Spec");
-                done();
-            });
-        });
-    });
-});*/

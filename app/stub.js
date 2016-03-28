@@ -7,19 +7,6 @@ var stubDemo = (function (){
 		getDefaultValue : function(){
 			return defaultValue;
 		},
-
-		/*getJson : function(){
-			url = "http://unco.oudemo.com/_training/docs/superheroes.xml";
-			$.ajax({ 
-				type: "GET",
-				dataType: "json",
-				url: url,
-				success: function(data){
-			  		return data;
-				}
-			});
-
-		}*/ 
         
         jsonCall : function(){
             url = "../data/data.js";
@@ -32,6 +19,10 @@ var stubDemo = (function (){
             
         },
         
+        returnJsonObject: function(){
+          var data = '[{ "x": 2,  "y": 2,  "radius": 2 },{ "x": 2, "y": 2,  "radius": 2 },{ "x": 2, "y": 2, "radius": 2 }]';
+          return jsonData = JSON.parse(data);   
+        },
         
         formatData : function(data){
 
